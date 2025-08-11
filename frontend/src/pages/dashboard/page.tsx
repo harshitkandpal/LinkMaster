@@ -11,7 +11,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import {useState, useEffect} from "react"
+import { Input } from "@/components/ui/input";
+import {useState, useEffect, useRef} from "react"
 import { useNavigate } from "react-router-dom"
 interface Collection {
   id: number;
@@ -32,13 +33,16 @@ interface Link {
 
 export const Dashboard: React.FC = () => {
   const [collections, setCollections] = useState<Collection[]|null>(null);
+  const [filteredCollections, setFilteredCollections] = useState<Collection[]|null>(null);
   const navigate = useNavigate();
+  const timer = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/collections/')
       .then(response => response.json())
       .then(data => {
         setCollections(data);
+        setFilteredCollections(data);
         console.log('Fetched collections:', data);
       })
       .catch(error => console.error('Error fetching collections:', error));
@@ -49,6 +53,21 @@ export const Dashboard: React.FC = () => {
     navigate(`/${collectionId}`);
   }
 
+  const handleSearch = (searchTerm: string) => {
+    if(timer.current){
+      clearTimeout(timer.current);
+    }
+    if (!searchTerm) {
+      setFilteredCollections(collections);
+      return;
+    }
+    timer.current = setTimeout(() => {
+      const filtered = collections?.filter(collection =>
+        collection.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredCollections(filtered || []);
+    }, 300);
+  }
 
   return (
     <SidebarProvider>
@@ -69,10 +88,16 @@ export const Dashboard: React.FC = () => {
           </Breadcrumb> */}
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4">
+          <Input
+            type="text"
+            placeholder="Search collections..."
+            onChange={(e) => handleSearch(e.target.value)}
+            className="border p-2 rounded max-w-sm"
+          />
           <div className="grid auto-rows-min gap-4 md:grid-cols-5">
             
             {collections ? (
-              collections.map((collection) => (
+              filteredCollections?.map((collection) => (
                 <div key={collection.id} className="bg-card p-4 rounded-lg shadow" onClick={() => handleCardClick(collection.id)}>
                   <h2 className="text-lg font-semibold">{collection.name}</h2>
                   <p className="text-sm text-muted-foreground">{collection.description}</p>
