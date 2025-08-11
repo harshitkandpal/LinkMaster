@@ -1,3 +1,17 @@
+
+import { AppSidebar } from "@/components/app-sidebar"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb"
+import { Separator } from "@/components/ui/separator"
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
 import {
   Table,
   TableBody,
@@ -39,6 +53,7 @@ export const CollectionDetails: React.FC = () => {
       .then(response => response.json())
       .then(data => {
         setCollection(data);
+        setFilteredLinks(data.links || []);
         console.log('Fetched collections:', data);
       })
       .catch(error => console.error('Error fetching collections:', error));
@@ -62,7 +77,23 @@ export const CollectionDetails: React.FC = () => {
   }
 
   return (
-
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
+        <header className="bg-background sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b px-4">
+          <SidebarTrigger className="-ml-1" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 data-[orientation=vertical]:h-4"
+          />
+          {/* <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbPage>October 2024</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb> */}
+        </header>
     <div className="md:container md:mx-auto px-4">
       <div className="font-bold lg:text-[5rem] sm:text-[3rem] text-[2rem]">{collection?.name}</div>
       <div className="lg:text-[1rem] sm:text-[0.875rem] text-[0.75rem]">{collection?.description}</div>
@@ -91,5 +122,7 @@ export const CollectionDetails: React.FC = () => {
       </TableBody>
     </Table>
     </div>
+    </SidebarInset>
+    </SidebarProvider>
   )
 }

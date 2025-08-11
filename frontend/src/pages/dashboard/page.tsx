@@ -101,7 +101,7 @@ export const Dashboard: React.FC = () => {
                 <div key={collection.id} className="bg-card p-4 rounded-lg shadow" onClick={() => handleCardClick(collection.id)}>
                   <h2 className="text-lg font-semibold">{collection.name}</h2>
                   <p className="text-sm text-muted-foreground">{collection.description}</p>
-                  <ul className="mt-2">
+                  {/* <ul className="mt-2">
                     {collection.links.map((link) => (
                       <li key={link.id} className="text-sm">
                         <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
@@ -109,7 +109,7 @@ export const Dashboard: React.FC = () => {
                         </a>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </div>
               ))
             ) : (
