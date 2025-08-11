@@ -12,7 +12,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import {useState, useEffect} from "react"
-
+import { useNavigate } from "react-router-dom"
 interface Collection {
   id: number;
   name: string;
@@ -28,8 +28,11 @@ interface Link {
 }
 
 
+
+
 export const Dashboard: React.FC = () => {
   const [collections, setCollections] = useState<Collection[]|null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:8080/api/collections/')
@@ -42,6 +45,9 @@ export const Dashboard: React.FC = () => {
       
   }, []);
 
+  const handleCardClick = (collectionId: number) =>{
+    navigate(`/${collectionId}`);
+  }
 
 
   return (
@@ -67,7 +73,7 @@ export const Dashboard: React.FC = () => {
             
             {collections ? (
               collections.map((collection) => (
-                <div key={collection.id} className="bg-card p-4 rounded-lg shadow">
+                <div key={collection.id} className="bg-card p-4 rounded-lg shadow" onClick={() => handleCardClick(collection.id)}>
                   <h2 className="text-lg font-semibold">{collection.name}</h2>
                   <p className="text-sm text-muted-foreground">{collection.description}</p>
                   <ul className="mt-2">
