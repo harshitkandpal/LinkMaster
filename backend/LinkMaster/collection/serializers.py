@@ -14,3 +14,4 @@ class CollectionSerializer(serializers.ModelSerializer):
         model = Collection
         fields = ['id','name','description', 'links']
         # read_only_fields = ['created_at', 'updated_at']
+
