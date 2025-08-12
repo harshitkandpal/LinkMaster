@@ -8,10 +8,28 @@ class LinkSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 class CollectionSerializer(serializers.ModelSerializer):
-    links = LinkSerializer(many=True)
+    # Show nested link objects when reading
+    links = LinkSerializer(many=True, read_only=True)
+    # Accept link IDs when writing
+    link_ids = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Link.objects.all(), write_only=True
+    )
 
     class Meta:
         model = Collection
-        fields = ['id','name','description', 'links']
-        # read_only_fields = ['created_at', 'updated_at']
+        fields = ['id', 'name', 'description', 'links', 'link_ids']
 
+    def create(self, validated_data):
+        link_ids = validated_data.pop('link_ids', [])
+        collection = Collection.objects.create(**validated_data)
+        collection.links.set(link_ids)
+        return collection
+
+    def update(self, instance, validated_data):
+        link_ids = validated_data.pop('link_ids', None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        if link_ids is not None:
+            instance.links.set(link_ids)
+        return instance

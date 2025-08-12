@@ -79,7 +79,7 @@ export const Dashboard: React.FC = () => {
     fetch("http://localhost:8080/api/collections/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, description, links: selectedLinks }),
+      body: JSON.stringify({ name, description, link_ids: selectedLinks }),
     })
       .then((res) => res.json())
       .then((newCollection) => {
