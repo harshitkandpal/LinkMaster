@@ -26,4 +26,10 @@ class CollectionSerializer(serializers.ModelSerializer):
         return collection
 
     def update(self, instance, validated_data):
-    a
+        link_ids = validated_data.pop('link_ids', None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        if link_ids is not None:
+            instance.links.add(*link_ids)  # Add new links without removing old
+        return instance
