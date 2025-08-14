@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.13 (Debian 15.13-1.pgdg120+1)
--- Dumped by pg_dump version 15.13 (Debian 15.13-1.pgdg120+1)
+-- Dumped from database version 15.13 (Debian 15.13-1.pgdg130+1)
+-- Dumped by pg_dump version 15.13 (Debian 15.13-1.pgdg130+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -574,14 +574,15 @@ COPY public.authtoken_token (key, created, user_id) FROM stdin;
 COPY public.collection_collection (id, name, description, created_at, updated_at) FROM stdin;
 2	Movie Sites	This stores Movies, TV Shows and all the pirated web-series.	2025-08-08 08:10:12.93043+00	2025-08-08 08:12:05.260507+00
 1	Anime Sites	This collection stores the list of anime websites, anime movies, and all the stuff related to anime.	2025-08-08 08:07:17.651234+00	2025-08-08 08:12:08.467929+00
-3	Jobs	This collection contains the links of applied and yet to applied jobs, portals and tracking of applications	2025-08-11 09:00:20.837901+00	2025-08-11 09:00:20.83791+00
 4	DSA	This collection  contains all the youtube tutorials, courses and links related to DSA.\r\nDSA placement ke sath bhi, placement ke baad bhi 🥲	2025-08-11 23:20:20.173877+00	2025-08-11 23:20:20.173887+00
 5	Backend	This collection contains all the resources related to the backend development. Koi full stack nahi hota!	2025-08-11 23:26:02.99228+00	2025-08-11 23:26:02.992292+00
 6	Frontend	This collection will have all the contect related to frontend.	2025-08-11 23:28:39.578843+00	2025-08-11 23:28:39.57885+00
 7	Open source & Dev Community	This collection have all the cool open source stuff and the dev community to learn from and stay up to date with.	2025-08-11 23:33:53.91918+00	2025-08-11 23:33:53.919189+00
-9	Social Media	This collection will contain all the social media links.	2025-08-12 07:11:39.613054+00	2025-08-12 07:11:39.613073+00
 8	Dimensionless Workbench	This collection have all the links that will be required to be used during work.	2025-08-11 23:37:26.920633+00	2025-08-13 05:27:21.295827+00
 10	Dev Tools	This collection will have all the developer tools	2025-08-13 10:00:12.166357+00	2025-08-13 10:00:12.166374+00
+3	Jobs	This collection contains the links of applied and yet to applied jobs, portals and tracking of applications	2025-08-11 09:00:20.837901+00	2025-08-13 16:54:10.523713+00
+11	Major Project	This collection have all the stuff related to the major project	2025-08-13 17:06:46.634521+00	2025-08-13 17:06:46.63453+00
+9	Social Media	This collection will contain all the social media links.	2025-08-12 07:11:39.613054+00	2025-08-13 17:16:46.854+00
 \.
 
 
@@ -604,6 +605,12 @@ COPY public.collection_collection_links (id, collection_id, link_id) FROM stdin;
 15	8	10
 16	8	13
 17	10	14
+18	3	15
+19	3	16
+20	3	17
+21	11	18
+22	9	8
+23	9	19
 \.
 
 
@@ -626,6 +633,11 @@ COPY public.collection_link (id, url, title, description) FROM stdin;
 12	https://docs.google.com/document/d/1oycILuGde8mzNQ15TLfi9n585WKEDeDC7XIzO4-HSBc/edit?tab=t.b05t317857om#heading=h.lav09kumo483	Dimensionless reference doc	This doc is for the future reference and the learning from the work.
 13	https://app.slack.com/client/T4NL9FDC3/D08UZ116L9Y?selected_team_id=T4NL9FDC3	Dimensionless Slack	This is the slack channel
 14	https://www.prisma.io/	Prisma	Prisma is a modern TypeScript ORM for Node.js that simplifies database access with an auto-generated and type-safe query API. It supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and more. Prisma uses a declarative schema file to define your database models, and automatically generates TypeScript types for queries, ensuring compile-time safety and reducing runtime errors. Ideal for building scalable backends with clear, maintainable database logic.
+15	https://codevita.tcsapps.com/	TCS CodeVita	A competitive coding exam taken by tcs.
+16	https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/userHome	Barclays	A good company with a good package.
+17	https://browserstack.wd3.myworkdayjobs.com/en-US/External/userHome	Browser Stack	A good company with high package
+18	https://drive.google.com/drive/folders/145zRlvYAn9WM-t575SnKhOebhyNKhzfe?usp=sharing	Drive link	This drive contains all the material related to the major project
+19	https://www.linkedin.com/in/harshitkandpal7/	LinkedIn	My linkedIn account
 \.
 
 
@@ -805,21 +817,21 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: collection_collection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_collection_id_seq', 10, true);
+SELECT pg_catalog.setval('public.collection_collection_id_seq', 11, true);
 
 
 --
 -- Name: collection_collection_links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 17, true);
+SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 23, true);
 
 
 --
 -- Name: collection_link_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_link_id_seq', 14, true);
+SELECT pg_catalog.setval('public.collection_link_id_seq', 19, true);
 
 
 --
