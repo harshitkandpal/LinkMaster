@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 15.13 (Debian 15.13-1.pgdg130+1)
--- Dumped by pg_dump version 15.13 (Debian 15.13-1.pgdg130+1)
+-- Dumped from database version 15.13 (Debian 15.13-1.pgdg120+1)
+-- Dumped by pg_dump version 15.13 (Debian 15.13-1.pgdg120+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -578,11 +578,11 @@ COPY public.collection_collection (id, name, description, created_at, updated_at
 5	Backend	This collection contains all the resources related to the backend development. Koi full stack nahi hota!	2025-08-11 23:26:02.99228+00	2025-08-11 23:26:02.992292+00
 6	Frontend	This collection will have all the contect related to frontend.	2025-08-11 23:28:39.578843+00	2025-08-11 23:28:39.57885+00
 7	Open source & Dev Community	This collection have all the cool open source stuff and the dev community to learn from and stay up to date with.	2025-08-11 23:33:53.91918+00	2025-08-11 23:33:53.919189+00
-8	Dimensionless Workbench	This collection have all the links that will be required to be used during work.	2025-08-11 23:37:26.920633+00	2025-08-13 05:27:21.295827+00
-10	Dev Tools	This collection will have all the developer tools	2025-08-13 10:00:12.166357+00	2025-08-13 10:00:12.166374+00
 3	Jobs	This collection contains the links of applied and yet to applied jobs, portals and tracking of applications	2025-08-11 09:00:20.837901+00	2025-08-13 16:54:10.523713+00
-11	Major Project	This collection have all the stuff related to the major project	2025-08-13 17:06:46.634521+00	2025-08-13 17:06:46.63453+00
 9	Social Media	This collection will contain all the social media links.	2025-08-12 07:11:39.613054+00	2025-08-13 17:16:46.854+00
+10	Dev Tools	This collection will have all the developer tools	2025-08-13 10:00:12.166357+00	2025-08-14 04:30:21.665923+00
+8	Dimensionless Workbench	This collection have all the links that will be required to be used during work.	2025-08-11 23:37:26.920633+00	2025-08-14 06:12:57.246389+00
+11	Major Project	This collection have all the stuff related to the major project	2025-08-13 17:06:46.634521+00	2025-08-14 07:49:33.025275+00
 \.
 
 
@@ -611,6 +611,10 @@ COPY public.collection_collection_links (id, collection_id, link_id) FROM stdin;
 21	11	18
 22	9	8
 23	9	19
+24	8	20
+25	10	21
+26	8	22
+27	11	23
 \.
 
 
@@ -638,6 +642,10 @@ COPY public.collection_link (id, url, title, description) FROM stdin;
 17	https://browserstack.wd3.myworkdayjobs.com/en-US/External/userHome	Browser Stack	A good company with high package
 18	https://drive.google.com/drive/folders/145zRlvYAn9WM-t575SnKhOebhyNKhzfe?usp=sharing	Drive link	This drive contains all the material related to the major project
 19	https://www.linkedin.com/in/harshitkandpal7/	LinkedIn	My linkedIn account
+20	http://localhost:5050	pg_admin	pg admin to fast access the databases from local to production
+21	https://monkeytype.com/	Monkey Type	Keeps your typing speed up.
+22	https://aushadhai-jb-pharma.dimensionless.in/	JB Prod	Production link JB
+23	https://github.com/Pinlong-Zhao/Data-Poisoning	data poisoning learn more	To support further exploration, an up- to-date repository of resources on data poisoning in deep learning  is available
 \.
 
 
@@ -824,14 +832,14 @@ SELECT pg_catalog.setval('public.collection_collection_id_seq', 11, true);
 -- Name: collection_collection_links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 23, true);
+SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 27, true);
 
 
 --
 -- Name: collection_link_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_link_id_seq', 19, true);
+SELECT pg_catalog.setval('public.collection_link_id_seq', 23, true);
 
 
 --
