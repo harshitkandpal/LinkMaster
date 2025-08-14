@@ -18,7 +18,7 @@ class SiteScraperView(APIView):
         try:
             response = requests_get(url)
             soup = BeautifulSoup(response.content, 'html.parser')
-            links = {}
+            links = []
             for link in  soup.find_all('a'):
                 href = link.get('href')
                 text = link.text.strip()
@@ -31,12 +31,12 @@ class SiteScraperView(APIView):
                             'description': description
                         }
                     )
-                
-                    links[link_instance.id] = {
+                    links.append({
+                        "id": link_instance.id,
                         "url": link_instance.url,
                         "title": link_instance.title,
                         "description": link_instance.description
-                    }
+                    })
             return Response(links, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
