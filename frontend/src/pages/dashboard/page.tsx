@@ -1,8 +1,20 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +34,9 @@ interface Collection {
 
 export const Dashboard: React.FC = () => {
   const [collections, setCollections] = useState<Collection[] | null>(null);
-  const [filteredCollections, setFilteredCollections] = useState<Collection[] | null>(null);
+  const [filteredCollections, setFilteredCollections] = useState<
+    Collection[] | null
+  >(null);
   const [links, setLinks] = useState<Link[]>([]);
   const [open, setOpen] = useState(false);
   const [linkDialogOpen, setLinkDialogOpen] = useState(false);
@@ -83,8 +97,12 @@ export const Dashboard: React.FC = () => {
     })
       .then((res) => res.json())
       .then((newCollection) => {
-        setCollections((prev) => (prev ? [...prev, newCollection] : [newCollection]));
-        setFilteredCollections((prev) => (prev ? [...prev, newCollection] : [newCollection]));
+        setCollections((prev) =>
+          prev ? [...prev, newCollection] : [newCollection]
+        );
+        setFilteredCollections((prev) =>
+          prev ? [...prev, newCollection] : [newCollection]
+        );
         setOpen(false);
         setName("");
         setDescription("");
@@ -96,7 +114,11 @@ export const Dashboard: React.FC = () => {
     fetch("http://localhost:8080/api/link/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: linkUrl, title: linkTitle, description: linkDescription }),
+      body: JSON.stringify({
+        url: linkUrl,
+        title: linkTitle,
+        description: linkDescription,
+      }),
     })
       .then((res) => res.json())
       .then((newLink) => {
@@ -134,7 +156,9 @@ export const Dashboard: React.FC = () => {
               onClick={() => handleCardClick(collection.id)}
             >
               <h2 className="text-lg font-semibold">{collection.name}</h2>
-              <p className="text-sm text-muted-foreground">{collection.description}</p>
+              <p className="text-sm text-muted-foreground">
+                {collection.description}
+              </p>
             </div>
           ))
         ) : (
@@ -146,7 +170,9 @@ export const Dashboard: React.FC = () => {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="bg-gray-900 text-white rounded-xl p-6 max-w-md mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold">Add New Collection</DialogTitle>
+            <DialogTitle className="text-xl font-bold">
+              Add New Collection
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
@@ -199,7 +225,10 @@ export const Dashboard: React.FC = () => {
             <Button onClick={() => setOpen(false)} variant="outline">
               Cancel
             </Button>
-            <Button onClick={handleSaveCollection} className="bg-purple-600 hover:bg-purple-700">
+            <Button
+              onClick={handleSaveCollection}
+              className="bg-purple-600 hover:bg-purple-700"
+            >
               Save
             </Button>
           </DialogFooter>
@@ -210,7 +239,9 @@ export const Dashboard: React.FC = () => {
       <Dialog open={linkDialogOpen} onOpenChange={setLinkDialogOpen}>
         <DialogContent className="bg-gray-900 text-white rounded-xl p-6 max-w-md mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold">Add New Link</DialogTitle>
+            <DialogTitle className="text-xl font-bold">
+              Add New Link
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
@@ -245,7 +276,10 @@ export const Dashboard: React.FC = () => {
             <Button onClick={() => setLinkDialogOpen(false)} variant="outline">
               Cancel
             </Button>
-            <Button onClick={handleAddLink} className="bg-green-600 hover:bg-green-700">
+            <Button
+              onClick={handleAddLink}
+              className="bg-green-600 hover:bg-green-700"
+            >
               Save Link
             </Button>
           </DialogFooter>
