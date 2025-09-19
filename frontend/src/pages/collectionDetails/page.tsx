@@ -119,7 +119,6 @@ export const CollectionDetails: React.FC = () => {
         return;
       }
       // Associate existing link with the collection
-      console.log("Adding existing link with ID:", selectedLinkId);
       fetch(`http://localhost:8080/api/collections/${collectionId}/`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -132,6 +131,22 @@ export const CollectionDetails: React.FC = () => {
         setLinkDialogOpen(false);
       });
     }
+  };
+
+  // 🔴 DELETE Handler
+  const handleDeleteLink = (id: number) => {
+    fetch("http://localhost:8080/api/link/", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    }).then((res) => {
+      if (res.status === 204) {
+        setFilteredLinks((prev) => prev?.filter((l) => l.id !== id) || []);
+        setLinks((prev) => prev.filter((l) => l.id !== id));
+      } else {
+        alert("Failed to delete link");
+      }
+    });
   };
 
   return (
@@ -166,6 +181,9 @@ export const CollectionDetails: React.FC = () => {
             <TableHead className="sm:text-[0.875rem] text-[0.75rem]">
               Description
             </TableHead>
+            <TableHead className="sm:text-[0.875rem] text-[0.75rem] text-right">
+              Action
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -179,10 +197,20 @@ export const CollectionDetails: React.FC = () => {
               <TableCell className="sm:text-[0.875rem] text-[0.75rem] whitespace-normal break-words">
                 {link.description}
               </TableCell>
+              <TableCell className="text-right">
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => handleDeleteLink(link.id)}
+                >
+                  Delete
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+
       {/* Add Link Modal */}
       <Dialog open={linkDialogOpen} onOpenChange={setLinkDialogOpen}>
         <DialogContent className="bg-gray-900 text-white rounded-xl p-6 max-w-md mx-auto">

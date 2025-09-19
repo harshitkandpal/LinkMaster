@@ -578,11 +578,12 @@ COPY public.collection_collection (id, name, description, created_at, updated_at
 5	Backend	This collection contains all the resources related to the backend development. Koi full stack nahi hota!	2025-08-11 23:26:02.99228+00	2025-08-11 23:26:02.992292+00
 6	Frontend	This collection will have all the contect related to frontend.	2025-08-11 23:28:39.578843+00	2025-08-11 23:28:39.57885+00
 7	Open source & Dev Community	This collection have all the cool open source stuff and the dev community to learn from and stay up to date with.	2025-08-11 23:33:53.91918+00	2025-08-11 23:33:53.919189+00
-3	Jobs	This collection contains the links of applied and yet to applied jobs, portals and tracking of applications	2025-08-11 09:00:20.837901+00	2025-08-13 16:54:10.523713+00
 9	Social Media	This collection will contain all the social media links.	2025-08-12 07:11:39.613054+00	2025-08-13 17:16:46.854+00
 10	Dev Tools	This collection will have all the developer tools	2025-08-13 10:00:12.166357+00	2025-08-14 04:30:21.665923+00
 8	Dimensionless Workbench	This collection have all the links that will be required to be used during work.	2025-08-11 23:37:26.920633+00	2025-08-14 06:12:57.246389+00
 11	Major Project	This collection have all the stuff related to the major project	2025-08-13 17:06:46.634521+00	2025-08-14 07:49:33.025275+00
+12	College	All the stuff related to college	2025-08-15 01:07:55.829383+00	2025-08-15 01:07:55.829397+00
+3	Jobs	This collection contains the links of applied and yet to applied jobs, portals and tracking of applications	2025-08-11 09:00:20.837901+00	2025-08-28 23:06:55.695015+00
 \.
 
 
@@ -594,7 +595,6 @@ COPY public.collection_collection_links (id, collection_id, link_id) FROM stdin;
 1	1	1
 2	1	2
 4	2	3
-5	3	4
 6	4	5
 7	5	6
 8	6	7
@@ -605,7 +605,6 @@ COPY public.collection_collection_links (id, collection_id, link_id) FROM stdin;
 15	8	10
 16	8	13
 17	10	14
-18	3	15
 19	3	16
 20	3	17
 21	11	18
@@ -615,6 +614,12 @@ COPY public.collection_collection_links (id, collection_id, link_id) FROM stdin;
 25	10	21
 26	8	22
 27	11	23
+28	12	375
+29	3	376
+30	3	377
+31	3	378
+32	3	379
+33	3	380
 \.
 
 
@@ -626,7 +631,6 @@ COPY public.collection_link (id, url, title, description) FROM stdin;
 1	https://hianime.to/	HiAnime	The best pirated website for anime lovers.
 2	https://hianime.to/violet-evergarden-the-movie-2020-159?ref=search	Violet Evergarden	Telephones will soon become more relevant, leading to a decline in demand for "Auto Memory Dolls."
 3	https://attackertv.so/	Attacker TV	Best up to dated content related every movies web series.
-4	https://nextstep.tcsapps.com/indiacampus/#/login	TCS NextStep	Applied to nextstep application status still pending.
 5	https://leetcode.com/problems/merge-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150	Leetcode 150 top qestions	covers all the topics and the questions are good to be solved.
 6	https://www.udemy.com/home/my-courses/learning/	udemy django course	This is the course that contains the basics of django, django restframe work
 7	https://ui.shadcn.com/docs/installation	shadcn Installation	This is official documentation of the shadcn to install it into your project as per the need.
@@ -637,7 +641,6 @@ COPY public.collection_link (id, url, title, description) FROM stdin;
 12	https://docs.google.com/document/d/1oycILuGde8mzNQ15TLfi9n585WKEDeDC7XIzO4-HSBc/edit?tab=t.b05t317857om#heading=h.lav09kumo483	Dimensionless reference doc	This doc is for the future reference and the learning from the work.
 13	https://app.slack.com/client/T4NL9FDC3/D08UZ116L9Y?selected_team_id=T4NL9FDC3	Dimensionless Slack	This is the slack channel
 14	https://www.prisma.io/	Prisma	Prisma is a modern TypeScript ORM for Node.js that simplifies database access with an auto-generated and type-safe query API. It supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, and more. Prisma uses a declarative schema file to define your database models, and automatically generates TypeScript types for queries, ensuring compile-time safety and reducing runtime errors. Ideal for building scalable backends with clear, maintainable database logic.
-15	https://codevita.tcsapps.com/	TCS CodeVita	A competitive coding exam taken by tcs.
 16	https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/userHome	Barclays	A good company with a good package.
 17	https://browserstack.wd3.myworkdayjobs.com/en-US/External/userHome	Browser Stack	A good company with high package
 18	https://drive.google.com/drive/folders/145zRlvYAn9WM-t575SnKhOebhyNKhzfe?usp=sharing	Drive link	This drive contains all the material related to the major project
@@ -646,6 +649,361 @@ COPY public.collection_link (id, url, title, description) FROM stdin;
 21	https://monkeytype.com/	Monkey Type	Keeps your typing speed up.
 22	https://aushadhai-jb-pharma.dimensionless.in/	JB Prod	Production link JB
 23	https://github.com/Pinlong-Zhao/Data-Poisoning	data poisoning learn more	To support further exploration, an up- to-date repository of resources on data poisoning in deep learning  is available
+24	#main	Skip to content	
+26	https://www.geeksforgeeks.org/courses/category/gate/	GATE 2026 Prep	
+27	https://www.geeksforgeeks.org/courses/category/ibm-certification/	Get 3 IBM Certifications	
+29	https://www.geeksforgeeks.org/courses/Java-backend-live/	JAVA Backend Development (Live)	
+30	https://www.geeksforgeeks.org/courses/data-analytics-training-program-excel-sql-python-powerbi	Data Analytics Training	
+31	https://www.geeksforgeeks.org/courses/devops-live/	DevOps Engineering (LIVE)	
+32	https://www.geeksforgeeks.org/courses/Data-Structures-With-Python/	DSA in Python	
+33	https://www.geeksforgeeks.org/courses/placement-prep-programming-data-structures-algorithm	Placement Preparation with DSA	
+41	https://www.geeksforgeeks.org/python/python-programming-language-tutorial/	Python	
+35	https://www.geeksforgeeks.org/courses/dsa-self-paced/	DSA Self Paced (C++/JAVA)	
+36	https://www.geeksforgeeks.org/courses/competitive-programming-cp/	Master Competitive Programming	
+34	https://www.geeksforgeeks.org/courses/data-science-live/	Data Science & ML Program	
+37	https://www.geeksforgeeks.org/courses/full-stack-node/	Full Stack Development	
+42	https://www.geeksforgeeks.org/java/java/	Java	
+44	https://www.geeksforgeeks.org/ai-ml-and-data-science-tutorial-learn-ai-ml-and-data-science/	ML & Data Science	
+56	https://connect.geeksforgeeks.org/	Become a Mentor	
+48	https://www.geeksforgeeks.org/gate-exam-tutorial/	GATE	
+25	https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide/	DSA to Development	
+55	https://www.geeksforgeeks.org/problem-of-the-day	Problem Of The Day	
+45	https://www.geeksforgeeks.org/interview-corner/	Interview Corner	
+46	https://www.geeksforgeeks.org/programming-language-tutorials/	Programming Languages	
+49	https://www.geeksforgeeks.org/articles-on-computer-science-subjects-gq/	CS Subjects	
+50	https://www.geeksforgeeks.org/devops/devops-tutorial/	DevOps	
+51	https://www.geeksforgeeks.org/geeksforgeeks-school/	School Learning	
+52	https://www.geeksforgeeks.org/websites-apps/software-and-tools-a-to-z-list/	Software and Tools	
+53	https://www.geeksforgeeks.org/geeksforgeeks-practice-best-online-coding-platform/	Practice Coding Problems	
+54	https://www.geeksforgeeks.org/nation-skill-up/	Nation Skillup- Free Courses	
+47	https://www.geeksforgeeks.org/web-technology/	Web Technologies	
+57	https://www.geeksforgeeks.org/jobs	Apply Now!	
+43	https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/	DSA	
+40	https://www.geeksforgeeks.org/courses	Explore GfG Courses	
+78	https://write.geeksforgeeks.org/#experiences	Share Your Experiences	
+58	https://www.geeksforgeeks.org/gfg-hiring-solutions-for-recruiters/	Post Jobs	
+59	https://practice.geeksforgeeks.org/events/rec/job-a-thon	Job-A-Thon: Hiring Challenge	
+60	https://www.geeksforgeeks.org/c-programming-language/	C	
+61	https://www.geeksforgeeks.org/c-language-introduction/	C Basics	
+62	https://www.geeksforgeeks.org/data-types-in-c/	C Data Types	
+63	https://www.geeksforgeeks.org/operators-in-c/	C Operators	
+64	https://www.geeksforgeeks.org/basic-input-and-output-in-c/	C  Input and Output	
+65	https://www.geeksforgeeks.org/decision-making-c-cpp/	C Control Flow	
+66	https://www.geeksforgeeks.org/c-functions/	C Functions	
+67	https://www.geeksforgeeks.org/c-arrays/	C Arrays	
+68	https://www.geeksforgeeks.org/strings-in-c/	C Strings	
+69	https://www.geeksforgeeks.org/c-pointers/	C Pointers	
+70	https://www.geeksforgeeks.org/cc-preprocessors/	C Preprocessors	
+71	https://www.geeksforgeeks.org/basics-file-handling-c/	C File Handling	
+72	https://www.geeksforgeeks.org/c-programming-examples/	C Programs	
+73	https://www.geeksforgeeks.org/c-cheatsheet/	C Cheatsheet	
+75	https://www.geeksforgeeks.org/c-multiple-choice-questions/	C MCQ	
+79	https://www.geeksforgeeks.org/c/c-programming-language/	C Programming Language Tutorial	
+80	https://www.geeksforgeeks.org/c/c-language-introduction/	C Language Introduction	
+81	https://www.geeksforgeeks.org/c/features-of-c-programming-language/	Features of C Programming Language	
+82	https://www.geeksforgeeks.org/c/c-programming-language-standard/	C Programming Language Standard	
+83	https://www.geeksforgeeks.org/c/c-hello-world-program/	C Hello World Program	
+84	https://www.geeksforgeeks.org/c/compiling-a-c-program-behind-the-scenes/	Compiling a C Program: Behind the Scenes	
+85	https://www.geeksforgeeks.org/c/c-comments/	C Comments	
+86	https://www.geeksforgeeks.org/c/tokens-in-c/	Tokens in C	
+87	https://www.geeksforgeeks.org/c/keywords-in-c/	Keywords in C	
+88	https://www.geeksforgeeks.org/c/variables-in-c/	C Variables	
+89	https://www.geeksforgeeks.org/c/constants-in-c/	Constants in C	
+90	https://www.geeksforgeeks.org/c/const-qualifier-in-c/	Const Qualifier in C	
+91	https://www.geeksforgeeks.org/c/different-ways-declare-variable-constant-c-c/	Different ways to declare variable as constant in C	
+92	https://www.geeksforgeeks.org/c/scope-rules-in-c/	Scope rules in C	
+93	https://www.geeksforgeeks.org/c/internal-linkage-external-linkage-c/	Internal Linkage and External Linkage in C	
+94	https://www.geeksforgeeks.org/c/global-variables-in-c/	Global Variables in C	
+95	https://www.geeksforgeeks.org/c/data-types-in-c/	Data Types in C	
+96	https://www.geeksforgeeks.org/c/literals-in-c-cpp-with-examples/	Literals in C	
+98	https://www.geeksforgeeks.org/c/bool-in-c/	bool in C	
+99	https://www.geeksforgeeks.org/c/integer-promotions-in-c/	Integer Promotions in C	
+100	https://www.geeksforgeeks.org/c/character-arithmetic-c-c/	Character Arithmetic in C	
+101	https://www.geeksforgeeks.org/c/type-conversion-c/	Type Conversion in C	
+102	https://www.geeksforgeeks.org/c/basic-input-and-output-in-c/	Basic Input and Output in C	
+103	https://www.geeksforgeeks.org/c/format-specifiers-in-c/	Format Specifiers in C	
+104	https://www.geeksforgeeks.org/c/printf-in-c/	printf in C	
+105	https://www.geeksforgeeks.org/c/scanf-in-c/	scanf in C	
+106	https://www.geeksforgeeks.org/c/scansets-in-c/	Scansets in C	
+107	https://www.geeksforgeeks.org/c/formatted-and-unformatted-input-output-functions-in-c-with-examples/	Formatted and Unformatted Input/Output in C	
+108	https://www.geeksforgeeks.org/c/operators-in-c/	Operators in C	
+109	https://www.geeksforgeeks.org/c/arithmetic-operators-in-c/	Arithmetic Operators in C	
+110	https://www.geeksforgeeks.org/c/unary-operators-cc/	Unary Operators in C	
+111	https://www.geeksforgeeks.org/c/relational-operators-in-c/	Relational Operators in C	
+112	https://www.geeksforgeeks.org/c/bitwise-operators-in-c-cpp/	Bitwise Operators in C	
+113	https://www.geeksforgeeks.org/c/logical-operators-in-c/	C Logical Operators	
+114	https://www.geeksforgeeks.org/c/assignment-operators-in-c-c/	Assignment Operators in C	
+115	https://www.geeksforgeeks.org/c/increment-and-decrement-operators-in-c/	Increment and Decrement Operators in C	
+116	https://www.geeksforgeeks.org/c/conditional-or-ternary-operator-in-c/	Conditional or Ternary Operator (?:) in C	
+117	https://www.geeksforgeeks.org/c/sizeof-operator-c/	sizeof operator in C	
+118	https://www.geeksforgeeks.org/c/operator-precedence-and-associativity-in-c/	Operator Precedence and Associativity in C	
+119	https://www.geeksforgeeks.org/cpp/decision-making-c-cpp/	Decision Making in C (if , if..else, Nested if, if-else-if )	
+120	https://www.geeksforgeeks.org/c/c-if-statement/	C - if Statement	
+121	https://www.geeksforgeeks.org/c/c-if-else-statement/	C if else Statement	
+122	https://www.geeksforgeeks.org/c/c-if-else-if-ladder/	C if , else if ladder	
+123	https://www.geeksforgeeks.org/c/c-switch-statement/	Switch Statement in C	
+124	https://www.geeksforgeeks.org/cpp/using-range-switch-case-cc/	Using Range in switch Case in C	
+76	https://www.geeksforgeeks.org/c-plus-plus/	C++	
+126	https://www.geeksforgeeks.org/c/c-for-loop/	C for Loop	
+127	https://www.geeksforgeeks.org/c/c-while-loop/	while Loop in C	
+128	https://www.geeksforgeeks.org/c/c-do-while-loop/	do...while Loop in C	
+129	https://www.geeksforgeeks.org/c/for-versus-while/	For vs. While	
+130	https://www.geeksforgeeks.org/c/continue-in-c/	Continue Statement in C	
+131	https://www.geeksforgeeks.org/c/c-break-statement/	Break Statement in C	
+132	https://www.geeksforgeeks.org/c/goto-statement-in-c/	goto Statement in C	
+133	https://www.geeksforgeeks.org/c/c-functions/	C Functions	
+135	https://www.geeksforgeeks.org/c/parameter-passing-techniques-in-c-cpp/	Parameter Passing Techniques in C	
+136	https://www.geeksforgeeks.org/c/function-prototype-in-c/	Function Prototype in C	
+137	https://www.geeksforgeeks.org/c/how-can-i-return-multiple-values-from-a-function/	How can I return multiple values from a function?	
+138	https://www.geeksforgeeks.org/c/main-function-in-c/	main Function in C	
+139	https://www.geeksforgeeks.org/c/implicit-return-type-int-c-language/	Implicit Return Type int in C	
+140	https://www.geeksforgeeks.org/c/callbacks-in-c/	Callbacks in C	
+141	https://www.geeksforgeeks.org/c/nested-functions-c/	Nested Functions in C	
+142	https://www.geeksforgeeks.org/c/variadic-functions-in-c/	Variadic Functions in C	
+143	https://www.geeksforgeeks.org/c/_noreturn-function-specifier-c/	_Noreturn function specifier in C	
+144	https://www.geeksforgeeks.org/c/predefined-identifier-func-in-c/	Predefined Identifier __func__ in C	
+145	https://www.geeksforgeeks.org/c/c-library-math-h-functions/	C Library math.h Functions	
+146	https://www.geeksforgeeks.org/c/c-arrays/	C Arrays	
+147	https://www.geeksforgeeks.org/c/properties-of-array-in-c/	Properties of Array in C	
+148	https://www.geeksforgeeks.org/c/multidimensional-arrays-in-c/	Multidimensional Arrays in C - 2D and 3D Arrays	
+149	https://www.geeksforgeeks.org/cpp/initialize-multidimensional-array-in-c/	Initialization of Multidimensional Array in C	
+150	https://www.geeksforgeeks.org/cpp/how-arrays-are-passed-to-functions-in-cc/	Pass Array to Functions in C	
+151	https://www.geeksforgeeks.org/c/pass-2d-array-parameter-c/	How to pass a 2D array as a parameter in C?	
+153	https://www.geeksforgeeks.org/c/pass-array-value-c/	How to pass an array by value in C ?	
+154	https://www.geeksforgeeks.org/c/strings-in-c/	Strings in C	
+155	https://www.geeksforgeeks.org/c/array-of-strings-in-c/	Array of Strings in C	
+156	https://www.geeksforgeeks.org/c/g-fact/	What is the difference between single quoted and double quoted declaration of char array?	
+157	https://www.geeksforgeeks.org/c/string-functions-in-c/	C String Functions	
+158	https://www.geeksforgeeks.org/c/c-pointers/	C Pointers	
+159	https://www.geeksforgeeks.org/c/pointer-arithmetics-in-c-with-examples/	Pointer Arithmetics in C with Examples	
+160	https://www.geeksforgeeks.org/c/c-pointer-to-pointer-double-pointer/	C - Pointer to Pointer (Double Pointer)	
+161	https://www.geeksforgeeks.org/c/function-pointer-in-c/	Function Pointer in C	
+162	https://www.geeksforgeeks.org/c/how-to-declare-a-pointer-to-a-function/	How to Declare a Pointer to a Function?	
+163	https://www.geeksforgeeks.org/c/pointer-array-array-pointer/	Pointer to an Array | Array Pointer	
+164	https://www.geeksforgeeks.org/cpp/difference-between-constant-pointer-pointers-to-constant-and-constant-pointers-to-constants/	Difference between constant pointer, pointers to constant, and constant pointers to constants	
+165	https://www.geeksforgeeks.org/c/pointer-vs-array-in-c/	Pointer vs Array in C	
+166	https://www.geeksforgeeks.org/c/dangling-void-null-wild-pointers/	Dangling, Void , Null and Wild Pointers in C	
+167	https://www.geeksforgeeks.org/c/what-are-near-far-and-huge-pointers/	Near, Far and Huge Pointers in C	
+168	https://www.geeksforgeeks.org/c/restrict-keyword-c/	restrict Keyword in C	
+169	https://www.geeksforgeeks.org/c/structures-c/	C Structures	
+170	https://www.geeksforgeeks.org/c/dot-operator-in-c/	dot (.) Operator in C	
+171	https://www.geeksforgeeks.org/c/typedef-in-c/	C typedef	
+172	https://www.geeksforgeeks.org/c/structure-member-alignment-padding-and-data-packing/	Structure Member Alignment, Padding and Data Packing	
+173	https://www.geeksforgeeks.org/c/flexible-array-members-structure-c/	Flexible Array Members in a structure in C	
+174	https://www.geeksforgeeks.org/c/c-unions/	C Unions	
+175	https://www.geeksforgeeks.org/c/bit-fields-c/	Bit Fields in C	
+176	https://www.geeksforgeeks.org/c/structure-vs-union-in-c/	Difference Between Structure and Union in C	
+177	https://www.geeksforgeeks.org/c/g-fact-38-anonymous-union-and-structure/	Anonymous Union and Structure in C	
+178	https://www.geeksforgeeks.org/c/enumeration-enum-c/	Enumeration (or enum) in C	
+179	https://www.geeksforgeeks.org/c/storage-classes-in-c/	Storage Classes in C	
+180	https://www.geeksforgeeks.org/c/understanding-extern-keyword-in-c/	extern Keyword in C	
+181	https://www.geeksforgeeks.org/c/static-variables-in-c/	Static Variables in C	
+182	https://www.geeksforgeeks.org/c/g-fact-80/	Initialization of Static Variables in C	
+183	https://www.geeksforgeeks.org/c/what-are-static-functions-in-c/	Static Functions in C	
+184	https://www.geeksforgeeks.org/c/understanding-volatile-qualifier-in-c/	Understanding "volatile" qualifier in C | Set 2 (Examples)	
+185	https://www.geeksforgeeks.org/c/understanding-register-keyword/	Understanding "register" keyword in C	
+186	https://www.geeksforgeeks.org/c/memory-layout-of-c-program/	Memory Layout of C Programs	
+245	https://www.geeksforgeeks.org/tag/cpp-basics/	CPP-Basics	
+241	https://www.geeksforgeeks.org/c/c-language-introduction	C Language Introduction	
+242	https://www.geeksforgeeks.org/user/chinmoy lenka/	chinmoy lenka	
+243	https://www.geeksforgeeks.org/category/programming-language/c/	C Language	
+234	https://www.geeksforgeeks.org/cpp/user-defined-literals-cpp/	User-Defined Literals	
+187	https://www.geeksforgeeks.org/c/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/	Dynamic Memory Allocation in C	
+188	https://www.geeksforgeeks.org/c/difference-between-malloc-and-calloc-with-examples/	Difference Between malloc() and calloc() with Examples	
+189	https://www.geeksforgeeks.org/c/what-is-memory-leak-how-can-we-avoid/	What is Memory Leak?  How can we avoid?	
+190	https://www.geeksforgeeks.org/c/dynamic-array-in-c/	Dynamic Array in C	
+191	https://www.geeksforgeeks.org/c/dynamically-allocate-2d-array-c/	How to dynamically allocate a 2D array in C?	
+192	https://www.geeksforgeeks.org/c/dynamically-growing-array-in-c/	Dynamically Growing Array in C	
+193	https://www.geeksforgeeks.org/c/cc-preprocessors/	C Preprocessors	
+194	https://www.geeksforgeeks.org/cpp/cpp-preprocessor-directives-set-2/	C Preprocessor Directives	
+195	https://www.geeksforgeeks.org/c/preprocessor-works-c/	How a Preprocessor works in C?	
+196	https://www.geeksforgeeks.org/c/header-files-in-c-cpp-and-its-uses/	Header Files in C	
+198	https://www.geeksforgeeks.org/c/write-header-file-c/	How to write your own header file in C?	
+199	https://www.geeksforgeeks.org/c/macros-and-its-types-in-c-cpp/	Macros and its types in C	
+200	https://www.geeksforgeeks.org/c/interesting-facts-preprocessors-c/	Interesting Facts about Macros and Preprocessors in C	
+201	https://www.geeksforgeeks.org/c/stringizing-and-token-pasting-operators-in-c/	# and ## Operators in C	
+202	https://www.geeksforgeeks.org/c/how-to-print-a-variable-name-in-c/	How to print a variable name in C?	
+203	https://www.geeksforgeeks.org/c/multiline-macros-in-c/	Multiline macros in C	
+204	https://www.geeksforgeeks.org/c/variable-length-arguments-for-macros/	Variable length arguments for Macros	
+205	https://www.geeksforgeeks.org/c/branch-prediction-macros-in-gcc/	Branch prediction macros in GCC	
+206	https://www.geeksforgeeks.org/c/typedef-versus-define-c/	Difference between typedef and #define in C	
+207	https://www.geeksforgeeks.org/c/diffference-define-const-c/	Difference between #define and const in C	
+208	https://www.geeksforgeeks.org/c/basics-file-handling-c/	Basics of File Handling in C	
+209	https://www.geeksforgeeks.org/c/c-fopen-function-with-examples/	C fopen() Function	
+210	https://www.geeksforgeeks.org/c/eof-and-feof-in-c/	EOF, getc() and feof() in C	
+211	https://www.geeksforgeeks.org/c/fgets-function-in-c/	fgets() in C	
+212	https://www.geeksforgeeks.org/c/g-fact-82/	fseek() vs rewind() in C	
+213	https://www.geeksforgeeks.org/c/g-fact-11/	What is return type of getchar(), fgetc() and getc() ?	
+214	https://www.geeksforgeeks.org/c/read-write-structure-from-to-a-file-in-c/	Read/Write Structure From/to a File in C	
+215	https://www.geeksforgeeks.org/c/c-program-print-contents-file/	C Program to Print Contents of File	
+216	https://www.geeksforgeeks.org/c/c-program-delete-file/	C Program to Delete a File	
+217	https://www.geeksforgeeks.org/c/c-program-merge-contents-two-files-third-file/	C Program to Merge Contents of Two Files into a Third File	
+218	https://www.geeksforgeeks.org/c/difference-printf-sprintf-fprintf/	What is the difference between printf, sprintf and fprintf?	
+219	https://www.geeksforgeeks.org/c/difference-getchar-getch-getc-getche/	Difference between  getc(), getchar(), getch() and getche()	
+220	https://www.geeksforgeeks.org/c/time-h-header-file-in-c-with-examples/	time.h header file in C with Examples	
+221	https://www.geeksforgeeks.org/c/input-output-system-calls-c-create-open-close-read-write/	Input-output system calls	
+222	https://www.geeksforgeeks.org/c/signals-c-language/	Signals in C language	
+223	https://www.geeksforgeeks.org/c/program-error-signals/	Program error signals	
+224	https://www.geeksforgeeks.org/c/socket-programming-cc/	Socket Programming in C	
+225	https://www.geeksforgeeks.org/c/_generic-keyword-c/	_Generics Keyword in C	
+226	https://www.geeksforgeeks.org/c/multithreading-in-c/	Multithreading in C	
+227	https://www.geeksforgeeks.org/c/c-interview-questions/	C Programming Interview Questions (2025)	
+228	https://www.geeksforgeeks.org/c/commonly-asked-c-programming-interview-questions-set-1/	Commonly Asked C Programming Interview Questions | Set 1	
+229	https://www.geeksforgeeks.org/c/commonly-asked-c-programming-interview-questions-set-2/	Commonly Asked C Programming Interview Questions | Set 2	
+231	https://www.geeksforgeeks.org/c/c-coding-interview-questions/	Top 50 C Coding Interview Questions and Answers (2025)	
+232	https://www.geeksforgeeks.org/courses/dsa-to-development-coding-guide	DSA to Development Course	
+233	https://www.geeksforgeeks.org/cpp/integer-literal-in-c-cpp-prefixes-suffixes/	Integer literals	
+97	https://www.geeksforgeeks.org/c/escape-sequence-in-c/	Escape Sequences	
+235	https://www.geeksforgeeks.org/cpp/raw-string-literal-c/	Raw String Literal in C++	
+236	https://www.geeksforgeeks.org/c/octal-literals-in-c/	Octal Literals in C	
+237	https://www.geeksforgeeks.org/c/compound-literals-c/	Compound Literals in C	
+238	https://www.geeksforgeeks.org/cpp/type-difference-of-character-literals-in-c-and-cpp/	Type Difference of Character Literals C++	
+244	https://www.geeksforgeeks.org/tag/c-basics/	C Basics	
+240	https://www.geeksforgeeks.org/campus-training-program/	Campus Training Program	
+247	https://www.geeksforgeeks.org/courses/gate-2026-placement-csit	11k+ interested Geeks \n\n\n\nGATE CS/IT 2026 Complete Course [with Placement Preparation] \n\n\n\n\nExplore	
+262	https://www.geeksforgeeks.org/java/	Java	
+260	https://www.geeksforgeeks.org/videos/	Videos	
+248	https://www.geeksforgeeks.org/advertise-with-us/	Advertise with us	
+249	https://www.geeksforgeeks.org/about/	About Us	
+250	https://www.geeksforgeeks.org/legal/	Legal	
+251	https://www.geeksforgeeks.org/legal/privacy-policy/	Privacy Policy	
+252	https://geeksforgeeks.zohorecruit.in/careers	Careers	
+253	https://www.geeksforgeeks.org/press-release/	In Media	
+254	https://www.geeksforgeeks.org/about/contact-us/	Contact Us	
+255	https://www.geeksforgeeks.org/gfg-corporate-solution/	Corporate Solution	
+256	https://practice.geeksforgeeks.org/events/rec/job-a-thon/	Job-A-Thon	
+257	https://www.geeksforgeeks.org/courses/category/all?courseType=offline&courseFeeType=all	Offline Classroom Program	
+258	https://www.geeksforgeeks.org/courses/dsa-self-paced	DSA in JAVA/C++	
+259	https://www.geeksforgeeks.org/courses/mastering-system-design-low-level-to-high-level-solutions	Master System Design	
+246	https://www.geeksforgeeks.org/courses/competitive-programming-cp	Master CP	
+292	https://www.geeksforgeeks.org/python-programming-examples/	Python Examples	
+263	https://www.geeksforgeeks.org/php-tutorials/	PHP	
+264	https://www.geeksforgeeks.org/golang/	GoLang	
+266	https://www.geeksforgeeks.org/r-tutorial/	R Language	
+267	https://www.geeksforgeeks.org/android-tutorial/	Android	
+268	https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/	DSA Tutorial	
+269	https://www.geeksforgeeks.org/courses/gfg-160-series	GfG 160	
+270	https://www.geeksforgeeks.org/courses/dsa-skill-up	DSA 360	
+271	https://www.geeksforgeeks.org/complete-roadmap-to-learn-dsa-from-scratch/	DSA Roadmap	
+272	https://www.geeksforgeeks.org/top-100-data-structure-and-algorithms-dsa-interview-questions-topic-wise/	DSA Interview Questions	
+273	https://www.geeksforgeeks.org/competitive-programming-a-complete-guide/	Competitive Programming	
+274	https://www.geeksforgeeks.org/ai-ml-ds/	Data Science & ML	
+275	https://www.geeksforgeeks.org/data-science-tutorial/	Data Science With Python	
+276	https://www.geeksforgeeks.org/machine-learning/	Machine Learning	
+277	https://www.geeksforgeeks.org/machine-learning-mathematics/	ML Maths	
+278	https://www.geeksforgeeks.org/python-data-visualization-tutorial/	Data Visualisation	
+279	https://www.geeksforgeeks.org/pandas-tutorial/	Pandas	
+280	https://www.geeksforgeeks.org/numpy-tutorial/	NumPy	
+281	https://www.geeksforgeeks.org/natural-language-processing-nlp-tutorial/	NLP	
+282	https://www.geeksforgeeks.org/deep-learning-tutorial/	Deep Learning	
+283	https://www.geeksforgeeks.org/html/	HTML	
+284	https://www.geeksforgeeks.org/css/	CSS	
+285	https://www.geeksforgeeks.org/javascript/	JavaScript	
+286	https://www.geeksforgeeks.org/typescript/	TypeScript	
+287	https://www.geeksforgeeks.org/learn-reactjs/	ReactJS	
+288	https://www.geeksforgeeks.org/nextjs/	NextJS	
+289	https://www.geeksforgeeks.org/nodejs/	NodeJs	
+290	https://www.geeksforgeeks.org/bootstrap/	Bootstrap	
+291	https://www.geeksforgeeks.org/tailwind-css/	Tailwind CSS	
+261	https://www.geeksforgeeks.org/python-programming-language/	Python Tutorial	
+293	https://www.geeksforgeeks.org/django-tutorial/	Django Tutorial	
+294	https://www.geeksforgeeks.org/python-projects-beginner-to-advanced/	Python Projects	
+295	https://www.geeksforgeeks.org/python-tkinter-tutorial/	Python Tkinter	
+296	https://www.geeksforgeeks.org/python-web-scraping-tutorial/	Web Scraping	
+297	https://www.geeksforgeeks.org/opencv-python-tutorial/	OpenCV Tutorial	
+298	https://www.geeksforgeeks.org/python-interview-questions/	Python Interview Question	
+299	https://www.geeksforgeeks.org/gate-cs-notes-gq/	GATE CS Notes	
+300	https://www.geeksforgeeks.org/operating-systems/	Operating Systems	
+301	https://www.geeksforgeeks.org/computer-network-tutorials/	Computer Network	
+302	https://www.geeksforgeeks.org/dbms/	Database Management System	
+303	https://www.geeksforgeeks.org/software-engineering/	Software Engineering	
+304	https://www.geeksforgeeks.org/digital-electronics-logic-design-tutorials/	Digital Logic Design	
+305	https://www.geeksforgeeks.org/engineering-mathematics-tutorials/	Engineering Maths	
+306	https://www.geeksforgeeks.org/devops-tutorial/	DevOps	
+307	https://www.geeksforgeeks.org/git-tutorial/	Git	
+308	https://www.geeksforgeeks.org/aws-tutorial/	AWS	
+309	https://www.geeksforgeeks.org/docker-tutorial/	Docker	
+310	https://www.geeksforgeeks.org/kubernetes-tutorial/	Kubernetes	
+311	https://www.geeksforgeeks.org/microsoft-azure/	Azure	
+312	https://www.geeksforgeeks.org/google-cloud-platform-tutorial/	GCP	
+313	https://www.geeksforgeeks.org/devops-roadmap/	DevOps Roadmap	
+315	https://www.geeksforgeeks.org/what-is-high-level-design-learn-system-design/	High Level Design	
+316	https://www.geeksforgeeks.org/what-is-low-level-design-or-lld-learn-system-design/	Low Level Design	
+317	https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/	UML Diagrams	
+318	https://www.geeksforgeeks.org/system-design-interview-guide/	Interview Guide	
+28	https://www.geeksforgeeks.org/courses/interviewe-101-data-structures-algorithm-system-design	Interview 101: DSA & System Design	
+74	https://www.geeksforgeeks.org/c-interview-questions/	C Interview Questions	
+77	https://geeksforgeeksapp.page.link/?link=https://www.geeksforgeeks.org/literals-in-c-cpp-with-examples/?type%3Darticle%26id%3D336969&apn=free.programming.programming&isi=1641848816&ibi=org.geeksforgeeks.GeeksforGeeksDev&efr=1	Open In App	
+125	https://www.geeksforgeeks.org/c/c-loops/	C - Loops	
+134	https://www.geeksforgeeks.org/c/user-defined-function-in-c/	User-Defined Function in C	
+152	https://www.geeksforgeeks.org/c/can-we-have-an-array-of-all-types-in-c/	What are the data types for which it is not possible to create an array?	
+197	https://www.geeksforgeeks.org/c/whats-difference-between-and/	What’s difference between header files "stdio.h" and "stdlib.h" ?	
+230	https://www.geeksforgeeks.org/interview-experiences/commonly-asked-c-programming-interview-questions-set-3/	Commonly Asked C Programming Interview Questions | Set 3	
+319	https://www.geeksforgeeks.org/software-design-patterns/	Design Patterns	
+321	https://www.geeksforgeeks.org/system-design-interview-bootcamp-guide/	System Design Bootcamp	
+322	https://www.geeksforgeeks.org/most-commonly-asked-system-design-interview-problems-questions/	Interview Questions	
+323	https://www.geeksforgeeks.org/maths/	Mathematics	
+324	https://www.geeksforgeeks.org/physics/	Physics	
+325	https://www.geeksforgeeks.org/chemistry/	Chemistry	
+326	https://www.geeksforgeeks.org/biology/	Biology	
+327	https://www.geeksforgeeks.org/social-science/	Social Science	
+328	https://www.geeksforgeeks.org/english-grammar/	English Grammar	
+329	https://www.geeksforgeeks.org/getting-started-with-database-management-system/	Databases	
+330	https://www.geeksforgeeks.org/mysql-tutorial/	MYSQL	
+331	https://www.geeksforgeeks.org/postgresql-tutorial/	PostgreSQL	
+332	https://www.geeksforgeeks.org/pl-sql-tutorial/	PL/SQL	
+333	https://www.geeksforgeeks.org/mongodb-tutorial/	MongoDB	
+334	https://www.geeksforgeeks.org/technical-interview-preparation/	Preparation Corner	
+335	https://www.geeksforgeeks.org/company-wise-recruitment-process/	Company-Wise Recruitment Process	
+336	https://www.geeksforgeeks.org/aptitude-questions-and-answers/	Aptitude Preparation	
+337	https://www.geeksforgeeks.org/puzzles/	Puzzles	
+338	https://www.geeksforgeeks.org/company-preparation/	Company-Wise Preparation	
+339	https://www.geeksforgeeks.org/geeksforgeeks-online-tutorials-free/	More Tutorials	
+340	https://www.geeksforgeeks.org/software-development/	Software Development	
+341	https://www.geeksforgeeks.org/software-testing-tutorial/	Software Testing	
+342	https://www.geeksforgeeks.org/product-management/	Product Management	
+343	https://www.geeksforgeeks.org/project-management-tutorial/	Project Management	
+344	https://www.geeksforgeeks.org/linux-tutorial/	Linux	
+345	https://www.geeksforgeeks.org/excel-tutorial/	Excel	
+347	https://www.geeksforgeeks.org/courses/category/ibm-certification	IBM Certification Courses	
+348	https://www.geeksforgeeks.org/courses/category/dsa-placements	DSA and Placements	
+349	https://www.geeksforgeeks.org/courses/category/development-testing	Web Development	
+350	https://www.geeksforgeeks.org/courses/category/machine-learning-data-science	Data Science	
+351	https://www.geeksforgeeks.org/courses/category/programming-languages	Programming Languages	
+352	https://www.geeksforgeeks.org/courses/category/cloud-devops	DevOps & Cloud	
+353	https://www.geeksforgeeks.org/courses/cpp-programming-basic-to-advanced	C++ Programming Course	
+354	https://www.geeksforgeeks.org/courses/java-online-course-complete-beginner-to-advanced	Java Programming Course	
+355	https://www.geeksforgeeks.org/courses/master-python-complete-beginner-to-advanced	Python Full Course	
+356	https://www.geeksforgeeks.org/courses/devops-live	DevOps Engineering	
+357	https://www.geeksforgeeks.org/courses/AWS-solutions-architect-certification-training-program-live	AWS Solutions Architect Certification	
+358	https://www.geeksforgeeks.org/courses/salesforce-certified-administrator	Salesforce Certified Administrator Course	
+359	https://www.geeksforgeeks.org/courses/category/gate	GATE 2026	
+360	https://www.geeksforgeeks.org/courses/gate-rank-booster	GATE CS Rank Booster	
+361	https://www.geeksforgeeks.org/courses/gate-da-rank-booster	GATE DA Rank Booster	
+362	https://www.geeksforgeeks.org/courses/gate-2026-csit	GATE CS & IT Course - 2026	
+363	https://www.geeksforgeeks.org/courses/gate-da-2026	GATE DA Course 2026	
+364	https://www.geeksforgeeks.org/gate-rank-predictor	GATE Rank Predictor	
+365	https://www.geeksforgeeks.org/	@GeeksforGeeks, Sanchhaya Education Private Limited	
+366	https://www.geeksforgeeks.org/copyright-information/	All rights reserved	
+367	https://www.geeksforgeeks.org/cookie-policy/	Cookie Policy	
+368	https://www.geeksforgeeks.org/privacy-policy/	Privacy Policy	
+369	https://write.geeksforgeeks.org/posts-new?cid=e8fc46fe-75e7-4a4b-be3c-0c862d655ed0	Interview Experiences	
+370	https://write.geeksforgeeks.org/posts-new?cid=82536bdb-84e6-4661-87c3-e77c3ac04ede	Admission Experiences	
+371	https://write.geeksforgeeks.org/posts-new?cid=5219b0b2-7671-40a0-9bda-503e28a61c31	Career Journeys	
+372	https://write.geeksforgeeks.org/posts-new?cid=22ae3354-15b6-4dd4-a5b4-5c7a105b8a8f	Work Experiences	
+373	https://write.geeksforgeeks.org/posts-new?cid=c5e1ac90-9490-440a-a5fa-6180c87ab8ae	Campus Experiences	
+314	https://www.geeksforgeeks.org/system-design-tutorial/	System Design	
+320	https://www.geeksforgeeks.org/object-oriented-analysis-and-design/	OOAD	
+265	https://www.geeksforgeeks.org/sql-tutorial/	SQL	
+346	https://www.geeksforgeeks.org/geeksforgeeks-master-sheet-list-of-all-cheat-sheets/	All Cheat Sheets	
+239	https://www.geeksforgeeks.org/courses/c-Programming-basic-to-advanced	C Programming with Data Structures	
+374	https://write.geeksforgeeks.org/posts-new?cid=5ebb8fe9-b980-4891-af07-f2d62a9735f2	Competitive Exam Experiences	
+375	https://fcrit-my.sharepoint.com/personal/amroz_fcrit_ac_in/_layouts/15/onedrive.aspx?id=[…]%5Fin%2FDocuments%2FSH2025%2FCSDC7013%5FNLP%5FSH2025&ga=1	NLP	Amroz Sir
+376	https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/my-profile/sign-in	jp morgan	
+377	https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/userHome	adobe	
+378	https://in.indeed.com/?from=gnav-jobseeker-profile--profile-one-frontend	indeed	
+379	https://www.naukri.com/naukri-campus-jobs?utmContent=google-one-tap	nukari campus	
+380	https://zendesk.wd1.myworkdayjobs.com/en-US/zendesk/userHome	zenDesk	
 \.
 
 
@@ -825,21 +1183,21 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: collection_collection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_collection_id_seq', 11, true);
+SELECT pg_catalog.setval('public.collection_collection_id_seq', 12, true);
 
 
 --
 -- Name: collection_collection_links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 27, true);
+SELECT pg_catalog.setval('public.collection_collection_links_id_seq', 33, true);
 
 
 --
 -- Name: collection_link_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
 --
 
-SELECT pg_catalog.setval('public.collection_link_id_seq', 23, true);
+SELECT pg_catalog.setval('public.collection_link_id_seq', 380, true);
 
 
 --
